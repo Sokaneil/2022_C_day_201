@@ -6,8 +6,8 @@
 
 NAME	=	libstu.a
 
-		src/putchar.c		\
 SRCS	=	src/puts.c 		\
+		src/putchar.c		\
 		src/print_base10.c	\
 		src/nb_len.c		\
 		src/get_digit.c		\
@@ -29,25 +29,16 @@ OBJS	=	$(SRCS:.c=.o)
 NAME_TEST	=	test.out
 
 
-SRCS_TEST	=	test/puts.c 		\
-			test/putchar.c		\
-			test/print_base10.c	\
-			test/nb_len.c		\
-			test/get_digit.c	\
-			test/atoi.c 		\
+SRCS_TEST	=	test/atoi.c 		\
 			test/strlen.c		\
-			test/strcmp.c		\
 			test/strcpy.c		\
-			test/strncpy.c 		\
-			test/strdup.c 		\
-			test/strndup.c 		\
-			test/strcat.c 		\
-			test/strchr.c 		\
+			test/strcmp.c		\
+			test/strdup.c		\
 			test/is_alpha.c 	\
 			test/is_num.c		\
 			test/swap_int.c
 
-OBJS_TEST	=	$(SRCS:.c=.o)
+OBJS_TEST	=	$(SRCS_TEST:.c=.o)
 
 
 CFLAGS	+=	-W -Wall -Wextra -Werror -Iinclude/
@@ -69,19 +60,25 @@ endif
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	 $(NAME) $(OBJS)
+	ar rc $(NAME) $(OBJS)
 
 $(NAME_TEST): $(OBJS) $(OBJS_TEST)
 	$(CC) -o $(NAME_TEST) $(OBJS) $(OBJS_TEST) -lcriterion
+
+save:
+	git status
+	git add *
+	git commit -m "Immersion s2"
+	git push
 
 test:
 	$(CC) $(CFLAGS)
 
 clean:
-	@$(RM) $(OBJS)
+	@$(RM) $(OBJS) $(OBJS_TEST)
 
 fclean: clean
-	@$(RM) $(NAME)
+	@$(RM) $(NAME) $(NAME_TEST)
 
 re: fclean all
 

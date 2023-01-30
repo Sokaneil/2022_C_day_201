@@ -15,7 +15,7 @@ int stu_puts(const char *str)
 
     i = stu_strlen(str);
     i = write (1, str, i);
-    write(1, '\n', 1);
+    write(1, "\n", 2);
     if ( i < 0) {
         return(-1);
     } else {

@@ -6,6 +6,7 @@
  * description: strncpy
  */
 
+#include <stddef.h>
 #include "stu.h"
 
 char *stu_strncpy(char *dest, const char *src, unsigned int n)
