@@ -6,14 +6,14 @@
  * description: strchr
  */
 
-int stu_strchr(const char *str, char search)
+char *stu_strchr(const char *str, char search)
 {
     int i;
 
     i = 0;
     while (str[i] != '\0') {
         if (str[i] == search) {
-            return 1;
+            return (char *)str;
         }
         i = i + 1;
     }

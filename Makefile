@@ -32,8 +32,12 @@ NAME_TEST	=	test.out
 SRCS_TEST	=	test/atoi.c 		\
 			test/strlen.c		\
 			test/strcpy.c		\
+			test/strncpy.c		\
 			test/strcmp.c		\
 			test/strdup.c		\
+			test/strndup.c		\
+			test/strcat.c 		\
+			test/strchr.c 		\
 			test/is_alpha.c 	\
 			test/is_num.c		\
 			test/swap_int.c
