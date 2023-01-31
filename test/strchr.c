@@ -1,5 +1,6 @@
 #include <criterion/criterion.h>
 #include "stu.h"
+#include <stddef.h>
 
 Test(strchr, normal) {
     char *str;
@@ -12,4 +13,7 @@ Test(strchr, numbers) {
 
     str = "5645464565";
     cr_assert_str_eq(stu_strchr(str, '4'), "45464565");
+}
+Test(strchr, empty) {
+    cr_assert_eq(stu_strchr("bruhbruh", '\0'), NULL);
 }

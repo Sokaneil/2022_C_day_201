@@ -10,12 +10,18 @@ int stu_atoi(const char *str)
 {
     int result;
     int i;
+    int j;
 
     result = 0;
     i = 0;
-    while (str[i] != '\0') {
-        result = result * 10 + str[i] - '0';
+    j = 1;
+    if (str[i] == '-') {
+            j = -1;
+            i += 1;
+    }
+    while (str[i] >= '0' && str[i] <= '9' && str[i] != '\0') {
+        result = result * 10 + (int)str[i] - '0';
         i += 1;
     }
-    return result;
+    return (result * j);
 }

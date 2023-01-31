@@ -7,3 +7,6 @@ Test(atoi, number) {
 Test(atoi, empty) {
     cr_assert_eq(stu_atoi(""), 0);
 }
+Test(atoi, negative) {
+    cr_assert_eq(stu_atoi("-123"), -123);
+}
