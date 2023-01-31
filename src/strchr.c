@@ -15,7 +15,7 @@ char *stu_strchr(const char *str, char search)
         if (str[i] == search) {
             return (char *)str;
         }
-        i = i + 1;
+        str += 1;
     }
     return 0;
 }

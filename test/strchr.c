@@ -2,11 +2,14 @@
 #include "stu.h"
 
 Test(strchr, normal) {
-    char *str1;
-    //char *str;
+    char *str;
 
-    str1 = malloc(sizeof(char) * 28);
-    stu_strcpy(str1, "THE ONE PIECE IS REAL!");
-    cr_assert_str_eq(stu_strchr(str1, 'O'), "E ONE PIECE IS REAL!");
-    free(str1);
+    str = "THE ONE PIECE IS REAL!";
+    cr_assert_str_eq(stu_strchr(str, 'O'), "ONE PIECE IS REAL!");
+}
+Test(strchr, numbers) {
+    char *str;
+
+    str = "5645464565";
+    cr_assert_str_eq(stu_strchr(str, '4'), "45464565");
 }
