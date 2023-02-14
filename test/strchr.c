@@ -17,3 +17,7 @@ Test(strchr, numbers) {
 Test(strchr, empty) {
     cr_assert_eq(stu_strchr("bruhbruh", '\0'), NULL);
 }
+
+Test(strchr, no_match) {
+    cr_assert_eq(stu_strchr("bruhbruh", 'w'), NULL);
+}

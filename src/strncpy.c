@@ -21,6 +21,7 @@ char *stu_strncpy(char *dest, const char *src, unsigned int n)
         if (m < (int)n) {
         dest[m] = src[m];
         } else {
+            dest[m] = '\0';
             return dest;
         }
         m = m + 1;
