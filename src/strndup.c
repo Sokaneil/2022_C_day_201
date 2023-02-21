@@ -23,9 +23,11 @@ char *stu_strndup(const char *src, unsigned int n)
         if (i < (int)n) {
             str[i] = src[i];
         } else {
-            return str;
+            str[i] = '\0';
+            return (str);
         }
         i += 1;
     }
+    str[i] = '\0';
     return (str);
 }
